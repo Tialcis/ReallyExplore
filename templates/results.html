@@ -1,0 +1,37 @@
+{% extends "search.html" %}
+
+{% block results %}
+<style>
+        .panel {
+        margin-top: 10%;	
+        background-color: rgba(242, 242, 242, 0.9);
+        }
+
+        </style>
+<div class = "panel">
+<ul class = "no-bullet">
+	<li>
+		<h3><small>You could try</small> {{ api_data["name"][:] }} <small>located at: </small> </h3>
+		<p></p>
+		 <h4><img src={{  api_data["rating_img_url_large"]  }}></h4>
+        <h5>{{ api_data["display_phone"]}}</h5>
+        <p></p>
+        <img class="result-image" src= {{  api_data["image_url"]  }} align="left" ></h4>
+   
+
+		<h4>{{ api_data["location"]["display_address"][0] }}</h4>
+		<h4>{{ api_data["location"]["display_address"][1] }}</h4>
+		<h4>{{ api_data["location"]["display_address"][2] }}</h4>
+		<p></p>
+		 <p>
+			<iframe
+			width="450"
+			height="300"
+			frameborder="0" style="border:0"
+			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCIPZzwF_XTTwZNLnv7EcrYnIa7o6b8ghI&q={{api_data["name"]}}+{{ api_data["location"]["display_address"][0]}}">
+			</iframe>
+		</p>
+	</li>
+</ul>
+</div>
+{% endblock %}

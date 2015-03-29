@@ -1,0 +1,17 @@
+body{
+	height: 100%;
+	width: 100%;
+	padding-top: 20px; 
+    padding-left: 60px;
+    background-color: black;
+    /* feel free to use any image you want.  The url() function will take local or internet images */
+    background-image: url(http://www.layoverguide.com/wp-content/uploads/2011/02/The-Statue-of-Liberty-and-Manhattan-Skyline-New-York-City-NY.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover; 
+}
+.result-image
+{
+    padding-right: 20px;
+}

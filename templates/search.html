@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        {% block title %}
+        ExploreNYC
+        {% endblock %}
+
+        <style>
+        .splash-page {
+        margin-top: 10%;
+        }
+        .splash-page .panel {
+        text-align: left;
+        background-color: rgba(242, 242, 242, 0.9);
+        }
+
+        </style>
+    </head>
+
+    {% block body %}
+    <div class="row splash-page">
+      <div class="medium-10 medium centered columns">
+       <div class="panel">
+        <h1>I want to explore</h1>
+        <form action="/page" method="POST">
+          <div class="row">
+           <div class="small-10 columns">
+            <input type="text" placeholder = "i.e. bars, museums, parks etc." name="user_search" required/>
+            </div>
+           <div class="small-2 columns">
+          <button class="postfix" type="submit">Explore</button> 
+        </div>
+        </form>
+        {% block results %}{% endblock %}
+       </div>
+    </div>
+        {% endblock %}
+    </body>
+</html>
